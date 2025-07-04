@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -5,19 +6,41 @@
     font-family: sans-serif;
 }
 
-header{
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    background-color: brown;
+header {
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);                                /* stay on top */
 }
 
-main{
+.logo{
+    font-size: 28px;
+    margin: 0;
+}
+.logo h1 {
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 600;
+}
+
+.navbar ul{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding-top: 60px;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li{
+    font-weight: bold;
+}
+body{
     background-color: seagreen;
 }
