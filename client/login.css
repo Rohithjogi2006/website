@@ -14,11 +14,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 15px 40px;
   background-color: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);                                /* stay on top */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo{
@@ -33,7 +33,7 @@ header {
 .navbar ul{
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 45px;
     margin: 0;
     padding: 0;
 }
@@ -42,5 +42,76 @@ header {
     font-weight: bold;
 }
 body{
-    background-color: seagreen;
+    background: linear-gradient(to right, #457d92, #55b08f);
+    min-height: 100vh;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.login-box{
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 40px;
+    width: 350px;
+
+}
+.login-box h2{
+    text-align: center;
+    font-family: "Poppins",sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.input-grp{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.input-grp label{
+    margin-bottom:3px ;
+    font-size: 17px;
+    font-weight: 200;
+}
+.input-grp input{
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.561);
+}
+.input-opt{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.input-opta{
+    color: white;
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    padding: 10px;
+    background: white;
+    color: #0a5365;
+    font-weight:bold;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+button:hover{
+    background: #eeeeeedd;
+}
+.register {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 15px;
 }
