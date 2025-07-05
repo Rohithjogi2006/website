@@ -9,3 +9,14 @@ form.addEventListener("submit", function(e) {
     alert("Please enter both username and password.");
   }
 });
+
+const showpassword=document.getElementById("showpassword");
+const passwordField=document.getElementById("password");
+showpassword.addEventListener("change",function() {
+  if (this.checked){
+    passwordField.setAttribute("type","text");
+  }
+  else{
+    passwordField.setAttribute("type","password");
+  }
+});

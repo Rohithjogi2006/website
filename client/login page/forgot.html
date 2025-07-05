@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot password</title>
+</head>
+<body>
+    <h1>CHANGE YOUR PASSWORD</h1>
+    <main>
+    <div class="login-box">
+      <form id="change-password-form">
+        <div class="input-grp">
+          <label for="new-password">new password</label>
+          <div class="input-wrapper">
+            <input type="password" id="new-password" name="new-password" placeholder="New password">
+            <img src="images\lock (1).png" alt="lock icon" class="lock-icon">
+          </div>
+        </div>
+        <div class="input-grp">
+          <label for="re-enter-password">reenter password</label>
+          <div class="input-wrapper">
+            <input type="password" id="re-enter-password" name="re-enter-password" placeholder="Reenter password">
+            <img src="images\lock (1).png" alt="lock icon" class="input-icon">
+          </div>
+        </div>
+        <div class="input-grp">
+          <label>
+            <input type="checkbox" id="showpassword">
+            show password
+          </label>
+        </div>
+        <button type="submit">submit</button>
+      </form>
+    </div>
+  </main>
+</body>
+<script>
+  const showPassword = document.getElementById("showpassword");
+  const newPasswordField = document.getElementById("new-password");
+  const reEnterPasswordField = document.getElementById("re-enter-password");
+  const form = document.getElementById("change-password-form");
+  const strongPasswordRegex=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+  showPassword.addEventListener("change", function () {
+    const type = this.checked ? "text" : "password";
+    newPasswordField.setAttribute("type", type);
+    reEnterPasswordField.setAttribute("type", type);
+  });
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const pass1 = newPasswordField.value.trim();
+    const pass2 = reEnterPasswordField.value.trim();
+
+    if (pass1 === "" || pass2 === "") {
+        alert("Please fill both the fields.");
+    } else if (pass1 !== pass2) {
+        alert("Passwords do not match.");
+    } else if(!strongPasswordRegex.test(pass1)){
+        alert("Password must be at least 8 characters and include uppercase, lowercase, number, and special character.")
+    } else {
+        alert("Password changed successfully!");
+      window.location.href = "login.html";
+    }
+  });
+</script>
+</html>
